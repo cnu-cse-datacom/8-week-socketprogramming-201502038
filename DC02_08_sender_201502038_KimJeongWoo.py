@@ -2,8 +2,8 @@ import socket
 import os
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 
-host ="192.168.31.193" 
-port = 3500
+host ="127.0.0.1" 
+port = 4160
 buf = 1024
 
 addr = (host,port) 

@@ -1,24 +1,20 @@
 import socket
 
 host='0.0.0.0'
-port = 3700
+port = 4160
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
-s.bind(('', port))
+s.bind((host, port))
 
-addr = (host,port)
-buf=1024
+f = open("result_file",'wb')
+data, addr = s.recvfrom(2000)
 
-f = open("result_file",'w')
-data, addr= s.recvfrom(buf)
-
-#size = int(data)
-size = 1024
 print('연결됨', addr)
-print("out while")
-count_num = 0;
-while count_num < size:
-    f.write(data.decode())
-    count_num = count_num + 1024
+
+while(data):
+    f.write(data)
+    if data:
+      break
+    data,_ =s.recvfrom(1024)
 
 f.close()
 s.close()
