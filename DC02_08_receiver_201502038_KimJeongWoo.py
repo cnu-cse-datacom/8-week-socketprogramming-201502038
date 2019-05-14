@@ -11,20 +11,20 @@ data,addr = s.recvfrom(1024)
 size = int(data)
 
 f = open("result_file",'wb')
-data, addr = s.recvfrom(2000)
+_data, addr = s.recvfrom(2000)
 print('연결됨', addr)
 number = 0
 try:
-   while(data):
+   while(_data):
        number += 1
        proceed = ((1024*number)/size)*100
        if proceed > 100:
            print(print("current_size / total_size=",100))
        else:
            print("current_size / total_size=",proceed)
-       f.write(data)
+       f.write(_data)
        s.settimeout(2)
-       data,_ =s.recvfrom(1024)
+       _data,_ =s.recvfrom(1024)
 except OSError:
              f.close()
              s.close()
