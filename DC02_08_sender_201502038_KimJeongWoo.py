@@ -17,12 +17,12 @@ s.sendto(size,(addr))
 number = 0
 while(data):
     number += 1
-    proceed = ((1024*number)/size)*100
+    proceed = ((1024*number)/int(size))*100
     if(s.sendto(data,addr)):
-	if proceed>100:
-             print(print("current_size / total_size=",100))
+        if proceed>100:
+            print(print("current_size / total_size=",100))
         else:
-             print("current_size / total_size=",proceed)
+            print("current_size / total_size=",proceed)
         data = f.read(buf) 
 
 s.close() 
