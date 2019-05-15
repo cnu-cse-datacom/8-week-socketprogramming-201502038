@@ -2,7 +2,7 @@ import socket
 import time
 
 host='0.0.0.0'
-port = 4230
+port = 9000
 s = socket.socket(socket.AF_INET,socket.SOCK_DGRAM)
 s.bind((host, port))
 

@@ -3,7 +3,7 @@ import os
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
 
 host ="127.0.0.1" 
-port = 4220
+port = 9000
 buf = 1024
 
 addr = (host,port) 
